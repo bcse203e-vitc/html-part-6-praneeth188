@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Missing Number</title>
+</head>
+<body>
+    <h1>Missing Number</h1>
+    <input type="text" id="arr" placeholder="Array (comma separated)">
+    <button onclick="findMissingNumber()">Find Missing Number</button>
+    <p id="result"></p>
+
+    <script>
+        function findMissingNumber() {
+            let arr = document.getElementById("arr").value.split(",").map(Number);
+            let n = arr.length + 1;
+            let sum = Math.floor(n * (n + 1) / 2);
+            let actualSum = arr.reduce((a, b) => a + b, 0);
+
+            let missingNumber = sum - actualSum;
+
+            document.getElementById("result").innerHTML = "Missing Number: " + missingNumber;
+        }
+    </script>
+</body>
+</html>

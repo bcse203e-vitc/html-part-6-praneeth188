@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decimal to Binary</title>
+</head>
+<body>
+    <h1>Decimal to Binary</h1>
+    <input type="number" id="num" placeholder="Number">
+    <button onclick="decimalToBinary()">Convert</button>
+    <p id="result"></p>
+
+    <script>
+        function decimalToBinary() {
+            let num = parseInt(document.getElementById("num").value);
+            let binary = num.toString(2);
+
+            document.getElementById("result").innerHTML = "Binary Representation: " + binary;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Second Smallest and Second Largest</title>
+</head>
+<body>
+    <h1>Second Smallest and Second Largest</h1>
+    <input type="text" id="arr" placeholder="Array (comma separated)">
+    <button onclick="findSecondSmallestAndSecondLargest()">Find</button>
+    <p id="result"></p>
+
+    <script>
+        function findSecondSmallestAndSecondLargest() {
+            let arr = document.getElementById("arr").value.split(",").map(Number);
+            arr.sort((a, b) => a - b);
+
+            let secondSmallest = arr[1];
+            let secondLargest = arr[arr.length - 2];
+
+            document.getElementById("result").innerHTML = "Second Smallest: " + secondSmallest + "<br>Second Largest: " + secondLargest;
+        }
+    </script>
+</body>
+</html>

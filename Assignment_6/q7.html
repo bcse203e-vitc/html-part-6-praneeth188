@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci Series</title>
+</head>
+<body>
+    <h1>Fibonacci Series</h1>
+    <input type="number" id="n" placeholder="Number of terms">
+    <button onclick="generateFibonacciSeries()">Generate</button>
+    <p id="result"></p>
+
+    <script>
+        function generateFibonacciSeries() {
+            let n = parseInt(document.getElementById("n").value);
+            let series = [0, 1];
+
+            for (let i = 2; i < n; i++) {
+                series.push(series[i - 1] + series[i - 2]);
+            }
+
+            document.getElementById("result").innerHTML = "Fibonacci Series: " + series.join(", ");
+        }
+    </script>
+</body>
+</html>

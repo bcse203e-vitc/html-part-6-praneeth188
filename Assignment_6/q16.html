@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Sort Array</title>
+</head>
+<body>
+    <h1>Sort Array</h1>
+    <input type="text" id="arr" placeholder="Array (comma separated)">
+    <button onclick="sortArray()">Sort Array</button>
+    <p id="result"></p>
+
+    <script>
+        function sortArray() {
+            let arr = document.getElementById("arr").value.split(",").map(Number);
+
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = i + 1; j < arr.length; j++) {
+                    if (arr[i] > arr[j]) {
+                        let temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+
+            document.getElementById("result").innerHTML = "Sorted Array: " + arr.join(", ");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Count Digits</title>
+</head>
+<body>
+    <h1>Count Digits</h1>
+    <input type="number" id="num" placeholder="Number">
+    <button onclick="countDigits()">Count</button>
+    <p id="result"></p>
+
+    <script>
+        function countDigits() {
+            let num = parseInt(document.getElementById("num").value);
+            let count = 0;
+
+            while (num > 0) {
+                num = Math.floor(num / 10);
+                count++;
+            }
+
+            document.getElementById("result").innerHTML = "Number of Digits: " + count;
+        }
+    </script>
+</body>
+</html>

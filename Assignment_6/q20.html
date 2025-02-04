@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Count</title>
+</head>
+<body>
+    <h1>Character Count</h1>
+    <input type="text" id="str" placeholder="String">
+    <button onclick="countCharacters()">Count Characters</button>
+    <p id="result"></p>
+
+    <script>
+        function countCharacters() {
+            let str = document.getElementById("str").value;
+            let charCount = {};
+
+            for (let i = 0; i < str.length; i++) {
+                if (charCount[str[i]]) {
+                    charCount[str[i]]++;
+                } else {
+                    charCount[str[i]] = 1;
+                }
+            }
+
+            document.getElementById("result").innerHTML = "Character Count: " + JSON.stringify(charCount);
+        }
+    </script>
+</body>
+</html>
